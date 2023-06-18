@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/mnBtDumbbell"
+        android:title="Workouts"
+        android:icon="@drawable/dumbbell_svg_icon"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/mnBtPlus"
+        android:title="Add new workout"
+        android:icon="@drawable/plus_svgr_icon"
+        app:showAsAction="always"/>
+    <item android:id="@+id/mnBtHistory"
+        android:title="History"
+        android:icon="@drawable/history_svg_icon"
+        app:showAsAction="always"
+        />
+</menu>
