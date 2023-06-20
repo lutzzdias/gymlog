@@ -8,7 +8,7 @@
     android:layout_marginTop="10dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtAddWorkout"
         android:layout_width="242dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
@@ -20,38 +20,37 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtAWTitle"
         android:layout_width="78dp"
         android:layout_height="30dp"
         android:layout_marginStart="4dp"
         android:text="@string/strTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAddWorkout" />
+
+    <EditText
+        android:id="@+id/edtAWTitle"
+        android:layout_width="363dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:inputType="text"
+        android:background="@drawable/edit_text_rounded"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAWTitle" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txtAWGroup"
         android:layout_width="113dp"
         android:layout_height="29dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text="@string/strMuscleGroup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="363dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:ems="10"
-        android:inputType="text"
-        android:background="@drawable/edit_text_rounded"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/edtAWTitle" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edtAWGroup"
         android:layout_width="363dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
@@ -60,10 +59,10 @@
         android:inputType="text"
         android:background="@drawable/edit_text_rounded"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAWGroup" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAddWorkout"
         android:layout_width="363dp"
         android:layout_height="43dp"
         android:layout_marginStart="4dp"
@@ -71,17 +70,18 @@
         android:text="@string/strCWSection"
         android:backgroundTint="#1F1F1F"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/edtAWGroup" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/iBttClose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
         android:background="FFF1FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.801"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:srcCompat="@drawable/ic_close"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintStart_toEndOf="@+id/txtAddWorkout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

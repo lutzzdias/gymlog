@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txtView"
+        android:id="@+id/txtWorkout"
         android:layout_width="165dp"
         android:layout_height="51dp"
         android:text="@string/strWSection"
@@ -17,15 +17,16 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/lvWorkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@drawable/item_list_background"
         android:dividerHeight="1dp"
         android:listSelector="@android:color/transparent"
         android:padding="10dp"
+        android:background="@drawable/item_list_background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtWorkout" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -37,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView"
+        app:layout_constraintTop_toBottomOf="@+id/lvWorkout"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_navigation_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

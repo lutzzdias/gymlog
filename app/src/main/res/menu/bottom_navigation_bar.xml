@@ -4,16 +4,16 @@
 
     <item android:id="@+id/mnBtDumbbell"
         android:title="Workouts"
-        android:icon="@drawable/dumbbell_svg_icon"
+        android:icon="@drawable/ic_dumbbell"
         app:showAsAction="always"
         />
     <item android:id="@+id/mnBtPlus"
         android:title="Add new workout"
-        android:icon="@drawable/plus_svgr_icon"
+        android:icon="@drawable/ic_add"
         app:showAsAction="always"/>
     <item android:id="@+id/mnBtHistory"
         android:title="History"
-        android:icon="@drawable/history_svg_icon"
+        android:icon="@drawable/ic_history"
         app:showAsAction="always"
         />
 </menu>
