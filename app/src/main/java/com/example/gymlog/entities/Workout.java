@@ -1,6 +1,5 @@
 package com.example.gymlog.entities;
 
-import androidx.room.ColumnInfo;
 import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -16,4 +15,6 @@ public class Workout {
     public Date date;
     @Embedded
     public List<Exercise> exercises;
+
+    public Workout() { }
 }
