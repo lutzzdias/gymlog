@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    >
 
     <TextView
-        android:id="@+id/txtWorkout"
+        android:id="@+id/txtExercicio"
         android:layout_width="165dp"
         android:layout_height="51dp"
-        android:text="@string/strWSection"
+        android:text="@string/strExercise"
         android:textSize="40sp"
         tools:layout_editor_absoluteX="12dp"
         tools:layout_editor_absoluteY="14dp"
@@ -17,11 +18,11 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageButton
-        android:id="@+id/ImageButtonAW"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/ImageButtonEA"
+        android:layout_width="37dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
         android:background="@color/white"
         android:src="@drawable/ic_compare_arrow"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +32,13 @@
         android:id="@+id/lvWorkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/item_list_background"
         android:divider="@drawable/item_list_background"
         android:dividerHeight="1dp"
         android:listSelector="@android:color/transparent"
         android:padding="10dp"
-        android:background="@drawable/item_list_background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWorkout" />
+        app:layout_constraintTop_toBottomOf="@+id/txtExercicio" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -48,8 +49,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvWorkout"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_navigation_bar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingButtonEA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/whiteFB"
+        android:backgroundTint="@color/whiteFB"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

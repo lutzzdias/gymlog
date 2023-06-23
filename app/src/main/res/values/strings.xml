@@ -4,5 +4,6 @@
     <string name="strCWSection">Adicionar exercício</string>
     <string name="strTitle">Titulo</string>
     <string name="strMuscleGroup">Grupo Muscular</string>
+    <string name="strExercise">Exercicios</string>
 
 </resources>
