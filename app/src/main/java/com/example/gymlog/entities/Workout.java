@@ -13,8 +13,6 @@ public class Workout {
     public int id;
     public String name;
     public Date date;
-    @Embedded
-    public List<Exercise> exercises;
 
     public Workout() { }
 }
