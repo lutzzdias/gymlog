@@ -1,38 +1,27 @@
 package com.example.gymlog;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import com.example.gymlog.database.AppDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_workout);
+        setContentView(R.layout.activity_main);
 
-        bNavigationView = findViewById(R.id.bottom_navigation);
-        bNavigationView.setOnItemSelectedListener(item -> {
-            if(item.getItemId() == R.id.mnBtDumbbell){
-               return true;
-            }else if (item.getItemId() == R.id.mnBtPlus){
-                Intent btDumbell = new Intent(this, Exercise_activity.class);
-                startActivity(btDumbell);
-                return true;
-            }else if(item.getItemId() == R.id.mnBtHistory){
-                return true;
-            }else {
-                return false;
-            }
+        AppDatabase database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "gymlog").build();
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ActiveWorkout.class);
+            startActivity(intent);
         });
     }
-
-
-
-
 }
