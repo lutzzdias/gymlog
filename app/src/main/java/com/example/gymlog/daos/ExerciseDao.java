@@ -1,4 +1,4 @@
-package com.example.gymlog.dao;
+package com.example.gymlog.daos;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
