@@ -9,4 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go to active workout" />
+    <Button
+        android:id="@+id/createExerciseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar exercício" />
 </LinearLayout>
