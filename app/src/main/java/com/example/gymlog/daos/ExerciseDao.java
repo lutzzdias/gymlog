@@ -1,5 +1,6 @@
 package com.example.gymlog.daos;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -12,10 +13,10 @@ import com.example.gymlog.entities.Exercise;
 @Dao
 public interface ExerciseDao {
     @Query("SELECT * FROM exercises")
-    List<Exercise> getAll();
+    LiveData<List<Exercise>> getAll();
 
     @Query("SELECT * FROM exercises WHERE id = :exerciseId")
-    Exercise getById(int exerciseId);
+    LiveData<Exercise> getById(int exerciseId);
 
     @Insert
     void insert(Exercise exercise);
