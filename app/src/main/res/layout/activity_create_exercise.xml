@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="20dp"
     android:layout_marginTop="10dp">
 
     <TextView
         android:id="@+id/txtAddWorkout"
         android:layout_width="242dp"
         android:layout_height="45dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="@string/strCWSection"
         android:textSize="25sp"
@@ -23,7 +22,7 @@
         android:id="@+id/txtAWTitle"
         android:layout_width="78dp"
         android:layout_height="30dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:text="@string/strTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAddWorkout" />
@@ -32,7 +31,7 @@
         android:id="@+id/edtAWTitle"
         android:layout_width="363dp"
         android:layout_height="45dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="text"
         android:elevation="5dp"
@@ -46,7 +45,7 @@
         android:id="@+id/txtAWGroup"
         android:layout_width="113dp"
         android:layout_height="29dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:text="@string/strMuscleGroup"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +55,7 @@
         android:id="@+id/edtAWGroup"
         android:layout_width="363dp"
         android:layout_height="45dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="text"
@@ -71,7 +70,7 @@
         android:id="@+id/btnAddWorkout"
         android:layout_width="363dp"
         android:layout_height="51dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="#1F1F1F"
         android:text="@string/strCWSection"
@@ -90,4 +89,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_close" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_navigation_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

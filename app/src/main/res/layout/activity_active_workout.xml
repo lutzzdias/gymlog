@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
     tools:context=".ActiveWorkout">
 
     <EditText
@@ -19,42 +18,59 @@
 
     <ListView
         android:id="@+id/currentWorkoutExerciseList"
-        android:layout_width="400dp"
-        android:layout_height="496dp"
+        android:layout_width="405dp"
+        android:layout_height="429dp"
         android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWorkoutName" />
 
-    <Button
-        android:id="@+id/addExerciseButton"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#000000"
-        android:text="Adicionar exercício"
-        app:layout_constraintBottom_toTopOf="@+id/saveWorkoutButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <Button
-        android:id="@+id/saveWorkoutButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#000000"
-        android:text="Salvar"
-        app:layout_constraintBottom_toTopOf="@+id/cancelWorkoutButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        <Button
+            android:id="@+id/addExerciseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="#000000"
+            android:text="Adicionar exercício" />
 
-    <Button
-        android:id="@+id/cancelWorkoutButton"
+        <Button
+            android:id="@+id/saveWorkoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="#000000"
+            android:text="Salvar" />
+
+        <Button
+            android:id="@+id/cancelWorkoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="#C62424"
+            android:text="Cancelar treino"
+             />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#C62424"
-        android:text="Cancelar treino"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_navigation_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
