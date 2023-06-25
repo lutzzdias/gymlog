@@ -32,4 +32,8 @@ public class WorkoutExerciseRepository {
     public void insert(WorkoutExercise workoutExercise) {
         AppDatabase.databaseWriteExecutor.execute(() -> workoutExerciseDao.insert(workoutExercise));
     }
+
+    public void delete(WorkoutExercise workoutExercise) {
+        AppDatabase.databaseWriteExecutor.execute(() -> workoutExerciseDao.delete(workoutExercise));
+    }
 }

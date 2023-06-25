@@ -25,4 +25,5 @@ public class WorkoutExerciseViewModel extends AndroidViewModel {
     public LiveData<List<WorkoutExercise>> getWorkoutExercises() { return workoutExercises; }
 
     public void insert(WorkoutExercise workoutExercise) { repository.insert(workoutExercise); }
+    public void delete(WorkoutExercise workoutExercise) { repository.delete(workoutExercise); }
 }

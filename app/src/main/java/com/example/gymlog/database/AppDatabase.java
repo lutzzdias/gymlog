@@ -26,6 +26,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ExerciseDao exerciseDao();
     public abstract WorkoutExerciseDao workoutExerciseDao();
 
+    public static final int CASCADE = 5;
+
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
     public static final ExecutorService databaseWriteExecutor =
