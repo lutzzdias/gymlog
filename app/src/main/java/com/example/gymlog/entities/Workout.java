@@ -25,4 +25,25 @@ public class Workout {
         this.name = name;
         this.date = date;
     }
+
+    @NonNull
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

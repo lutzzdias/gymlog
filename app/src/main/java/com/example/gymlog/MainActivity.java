@@ -72,10 +72,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     private void goToExerciseListScreen() {
         Intent intent = new Intent(this, ExerciseList.class);
         startActivity(intent);
     }
+
 
     private void createExerciseWithHardcodedData() {
         Exercise exercise = new Exercise("Rosca Direta na Polia", "Bíceps");
