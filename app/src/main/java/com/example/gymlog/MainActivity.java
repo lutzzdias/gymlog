@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(view -> {
-            Intent intent = new Intent(this, ActiveWorkout.class);
+            Intent intent = new Intent(this, ExerciseList.class);
             startActivity(intent);
         });
     }
