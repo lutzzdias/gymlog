@@ -68,18 +68,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void createExerciseWithHardcodedData() {
         Exercise exercise = new Exercise("Rosca Direta na Polia", "Bíceps");
-        System.out.println("exercise: " + exercise.name);
+        System.out.println("exercise: " + exercise.id);
         exerciseViewModel.insert(exercise);
     }
 
     private void createWorkoutWithHardcodedData() {
         Workout workout = new Workout("Costas e Bíceps", new Date());
-        System.out.println("workout: " + workout.name);
+        System.out.println("workout: " + workout.id);
         workoutViewModel.insert(workout);
     }
 
+    // Every time the database is cleaned the workoutId and exerciseId must be changed here
     private void createWorkoutExerciseWithHardcodedData() {
-        WorkoutExercise workoutExercise = new WorkoutExercise("5fc086df-de83-459e-b6f0-08b1c437f30d", "f166c764-a51f-4b83-9261-1dee45136729", 3, 10, 20);
+        WorkoutExercise workoutExercise = new WorkoutExercise("07714b8f-f4bf-410b-beb9-a25caa8caf28", "f9146fe9-53e2-46b4-8726-7290a9f4fd08", 3, 10, 20);
         workoutExerciseViewModel.insert(workoutExercise);
     }
 
