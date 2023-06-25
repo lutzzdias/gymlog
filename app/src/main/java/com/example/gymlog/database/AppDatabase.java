@@ -2,21 +2,25 @@ package com.example.gymlog.database;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.gymlog.daos.ExerciseDao;
 import com.example.gymlog.daos.WorkoutDao;
 import com.example.gymlog.entities.Exercise;
 import com.example.gymlog.entities.Workout;
 import com.example.gymlog.helper.DateHelper;
+import com.example.gymlog.repositories.WorkoutRepository;
 
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Workout.class, Exercise.class}, version = 1)
+@Database(entities = {Workout.class, Exercise.class}, version = 2)
 @TypeConverters({DateHelper.class})
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -31,6 +35,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                                     AppDatabase.class, "gymlog_database")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

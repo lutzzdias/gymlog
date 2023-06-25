@@ -14,7 +14,7 @@ public class ExerciseViewModel extends AndroidViewModel {
 
     final private ExerciseRepository repository;
 
-    private final LiveData<List<Exercise>> exercises;
+    public final LiveData<List<Exercise>> exercises;
 
     public ExerciseViewModel (Application application) {
         super(application);
@@ -22,7 +22,7 @@ public class ExerciseViewModel extends AndroidViewModel {
         exercises = repository.getExercises();
     }
 
-    LiveData<List<Exercise>> getExercises() { return exercises; }
+    public LiveData<List<Exercise>> getExercises() { return exercises; }
 
     public void insert(Exercise exercise) { repository.insert(exercise); }
 }
