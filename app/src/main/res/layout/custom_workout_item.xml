@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/txtWTitle"
+        android:id="@+id/WEName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pernas"
@@ -20,7 +20,7 @@
 
 
     <TextView
-        android:id="@+id/txtDescription"
+        android:id="@+id/WEMuscleGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Treino A"
