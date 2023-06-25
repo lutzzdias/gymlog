@@ -9,41 +9,35 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class ExerciseList extends AppCompatActivity {
+public class WorkoutList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise_list);
+        setContentView(R.layout.activity_workout_list);
 
         Context context = this;
-        //ImageButton
-        ImageButton iBChange = findViewById(R.id.ImageButtonEA);
-        iBChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
-        //FloatingButton
-        FloatingActionButton fab = findViewById(R.id.floatingButtonEA);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        //ImageButton - Troca de treino para exercicio
+        ImageButton change = findViewById(R.id.ImageButtonAW);
+        change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, CreateExercise.class);
+                Intent intent = new Intent(context, ExerciseList.class);
                 startActivity(intent);
             }
         });
 
-        //NavigationView
-        BottomNavigationView navigationB = findViewById(R.id.bottom_navigationAEL);
+
+        //BottomNavigationView
+        BottomNavigationView navigationB = findViewById(R.id.bottom_navigationAWL);
         navigationB.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.mnBtDumbbell){
-               finish();
+                return true;
             }else if(item.getItemId() == R.id.mnBtPlus){
                 Intent workoutIntent = new Intent(context, ActiveWorkout.class);
                 startActivity(workoutIntent);

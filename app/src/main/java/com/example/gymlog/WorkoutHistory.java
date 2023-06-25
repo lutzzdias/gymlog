@@ -8,26 +8,27 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ActiveWorkout extends AppCompatActivity {
+public class WorkoutHistory extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_active_workout);
+        setContentView(R.layout.history_workouts);
 
         Context context = this;
 
         //BottomNavigationView
-        BottomNavigationView navigationB = findViewById(R.id.bottom_navigationAAW);
+        BottomNavigationView navigationB = findViewById(R.id.bottom_navigationHW);
         navigationB.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.mnBtDumbbell){
                 Intent WEIntent = new Intent(context, WorkoutList.class);
                 startActivity(WEIntent);
             }else if(item.getItemId() == R.id.mnBtPlus){
-                return true;
+                Intent workoutIntent = new Intent(context, ActiveWorkout.class);
+                startActivity(workoutIntent);
             }else if(item.getItemId() == R.id.mnBtHistory){
-                Intent historyIntent = new Intent(context, WorkoutHistory.class);
-                startActivity(historyIntent);
+                return true;
             }
             return false;
         });
