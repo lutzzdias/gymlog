@@ -41,8 +41,14 @@ public class MainActivity extends AppCompatActivity {
         Button createWorkoutExerciseButton = findViewById(R.id.createWorkoutExerciseButton);
         createWorkoutExerciseButton.setOnClickListener(view -> createWorkoutExerciseWithHardcodedData());
 
-        Button getExerciseByIdButton = findViewById(R.id.getExerciseById);
+        Button getExerciseByIdButton = findViewById(R.id.getExerciseByIdButton);
         getExerciseByIdButton.setOnClickListener(view -> getExerciseById());
+
+        Button getWorkoutbyIdButton = findViewById(R.id.getWorkoutByIdButton);
+        getWorkoutbyIdButton.setOnClickListener(view -> getWorkoutById());
+
+        Button getWorkoutExercisesButton = findViewById(R.id.getWorkoutExercisesButton);
+        getWorkoutExercisesButton.setOnClickListener(view -> getWorkoutExercises());
 
         Button logDataButton = findViewById(R.id.logDataButton);
         logDataButton.setOnClickListener(view -> logDataIntoConsole());
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             workouts.forEach(workout -> System.out.println(workout.name));
         });
 
-        workoutExerciseViewModel.workoutExercises.observe(this, workoutExercises -> {
+        workoutExerciseViewModel.allWorkoutExercises.observe(this, workoutExercises -> {
             workoutExercises.forEach(workoutExercise -> System.out.printf(Locale.US, "workoutId: %s - exerciseId: %s%n", workoutExercise.workoutId, workoutExercise.exerciseId));
         });
     }
@@ -96,9 +102,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void getWorkoutById() {
+        workoutViewModel.getWorkoutById("414367cf-adbd-4c96-9f44-6d4968e702fd");
+        workoutViewModel.workout.observe(this, wk -> {
+            System.out.println(wk.name);
+        });
+    }
+
+    private void getWorkoutExercises() {
+        workoutExerciseViewModel.getWorkoutExercises("414367cf-adbd-4c96-9f44-6d4968e702fd");
+        workoutExerciseViewModel.workoutExercises.observe(this, workoutExercises -> {
+            workoutExercises.forEach(wke -> System.out.println(wke.id));
+        });
+    }
+
     private void logDataIntoConsole() {
         System.out.println(exerciseViewModel.getExercises().getValue());
         System.out.println(workoutViewModel.getWorkouts().getValue());
-        System.out.println(workoutExerciseViewModel.getWorkoutExercises().getValue());
+        System.out.println(workoutExerciseViewModel.getAll().getValue());
     }
 }

@@ -13,18 +13,22 @@ import java.util.List;
 public class WorkoutExerciseRepository {
 
     private WorkoutExerciseDao workoutExerciseDao;
-    private LiveData<List<WorkoutExercise>> workoutExercises;
+    private LiveData<List<WorkoutExercise>> allWorkoutExercises;
 
     public WorkoutExerciseRepository(Application application) {
         AppDatabase db = AppDatabase.getDatabase(application);
         workoutExerciseDao = db.workoutExerciseDao();
-        workoutExercises = workoutExerciseDao.getAll();
+        allWorkoutExercises = workoutExerciseDao.getAll();
     }
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    public LiveData<List<WorkoutExercise>> getWorkoutExercises() {
-        return workoutExercises;
+    public LiveData<List<WorkoutExercise>> getAll() {
+        return allWorkoutExercises;
+    }
+
+    public LiveData<List<WorkoutExercise>> getWorkoutExercises(String workoutId) {
+        return workoutExerciseDao.getExercisesByWorkoutId(workoutId);
     }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures

@@ -14,15 +14,21 @@ public class WorkoutExerciseViewModel extends AndroidViewModel {
 
     final private WorkoutExerciseRepository repository;
 
-    public final LiveData<List<WorkoutExercise>> workoutExercises;
+    public final LiveData<List<WorkoutExercise>> allWorkoutExercises;
+    public LiveData<List<WorkoutExercise>> workoutExercises;
 
     public WorkoutExerciseViewModel(Application application) {
         super(application);
         repository = new WorkoutExerciseRepository(application);
-        workoutExercises = repository.getWorkoutExercises();
+        allWorkoutExercises = repository.getAll();
     }
 
-    public LiveData<List<WorkoutExercise>> getWorkoutExercises() { return workoutExercises; }
+    public LiveData<List<WorkoutExercise>> getAll() { return allWorkoutExercises; }
+
+    public LiveData<List<WorkoutExercise>> getWorkoutExercises(String workoutId) {
+        workoutExercises = repository.getWorkoutExercises(workoutId);
+        return workoutExercises;
+    }
 
     public void insert(WorkoutExercise workoutExercise) { repository.insert(workoutExercise); }
     public void delete(WorkoutExercise workoutExercise) { repository.delete(workoutExercise); }
