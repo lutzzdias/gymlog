@@ -17,7 +17,7 @@ public interface WorkoutDao {
     LiveData<List<Workout>> getAll();
 
     @Query("SELECT * FROM workouts WHERE id = :workoutId")
-    LiveData<Workout> getById(int workoutId);
+    LiveData<Workout> getById(String workoutId);
 
     @Insert
     void insert(Workout workout);
