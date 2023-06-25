@@ -25,6 +25,11 @@
         android:layout_height="wrap_content"
         android:text="Criar exercício de um treino" />
     <Button
+        android:id="@+id/getExerciseById"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get ex by id" />
+    <Button
         android:id="@+id/logDataButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

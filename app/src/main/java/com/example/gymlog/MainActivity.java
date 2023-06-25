@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         Button createWorkoutExerciseButton = findViewById(R.id.createWorkoutExerciseButton);
         createWorkoutExerciseButton.setOnClickListener(view -> createWorkoutExerciseWithHardcodedData());
 
+        Button getExerciseByIdButton = findViewById(R.id.getExerciseById);
+        getExerciseByIdButton.setOnClickListener(view -> getExerciseById());
+
         Button logDataButton = findViewById(R.id.logDataButton);
         logDataButton.setOnClickListener(view -> logDataIntoConsole());
     }
@@ -53,9 +56,11 @@ public class MainActivity extends AppCompatActivity {
         exerciseViewModel.exercises.observe(this, exercises -> {
             exercises.forEach(exercise -> System.out.println(exercise.name));
         });
+
         workoutViewModel.workouts.observe(this, workouts -> {
             workouts.forEach(workout -> System.out.println(workout.name));
         });
+
         workoutExerciseViewModel.workoutExercises.observe(this, workoutExercises -> {
             workoutExercises.forEach(workoutExercise -> System.out.printf(Locale.US, "workoutId: %s - exerciseId: %s%n", workoutExercise.workoutId, workoutExercise.exerciseId));
         });
@@ -80,8 +85,15 @@ public class MainActivity extends AppCompatActivity {
 
     // Every time the database is cleaned the workoutId and exerciseId must be changed here
     private void createWorkoutExerciseWithHardcodedData() {
-        WorkoutExercise workoutExercise = new WorkoutExercise("07714b8f-f4bf-410b-beb9-a25caa8caf28", "f9146fe9-53e2-46b4-8726-7290a9f4fd08", 3, 10, 20);
+        WorkoutExercise workoutExercise = new WorkoutExercise("414367cf-adbd-4c96-9f44-6d4968e702fd", "1e70a1a1-8d15-4da6-be5d-2b5a5093ea91", 3, 10, 20);
         workoutExerciseViewModel.insert(workoutExercise);
+    }
+
+    private void getExerciseById() {
+        exerciseViewModel.getExerciseById("fe21f1c5-7484-4f56-b8f4-4776986caa55");
+        exerciseViewModel.exercise.observe(this, ex -> {
+            System.out.println(ex.name);
+        });
     }
 
     private void logDataIntoConsole() {
