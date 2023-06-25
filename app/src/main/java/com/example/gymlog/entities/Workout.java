@@ -9,8 +9,13 @@ import java.util.List;
 
 @Entity(tableName = "workouts")
 public class Workout {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int id;
     public String name;
     public Date date;
+
+    public Workout(String name, Date date){
+        this.name = name;
+        this.date = date;
+    }
 }
