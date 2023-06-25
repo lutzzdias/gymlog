@@ -1,5 +1,7 @@
 package com.example.gymlog.entities;
 
+import static com.example.gymlog.database.AppDatabase.CASCADE;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -13,8 +15,8 @@ import java.util.UUID;
 
 @Entity(tableName = "workout_exercises",
         foreignKeys = {
-            @ForeignKey(entity = Workout.class, parentColumns = "id", childColumns = "workout_id" ),
-            @ForeignKey(entity = Exercise.class, parentColumns = "id", childColumns = "exercise_id" ),
+            @ForeignKey(entity = Workout.class, parentColumns = "id", childColumns = "workout_id", onDelete = CASCADE),
+            @ForeignKey(entity = Exercise.class, parentColumns = "id", childColumns = "exercise_id", onDelete = CASCADE),
         },
         indices = {@Index(value = {"workout_id", "exercise_id"})}
 )

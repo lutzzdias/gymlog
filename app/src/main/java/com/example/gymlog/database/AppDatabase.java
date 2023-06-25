@@ -18,13 +18,15 @@ import com.example.gymlog.helper.DateHelper;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Workout.class, Exercise.class, WorkoutExercise.class}, version = 4)
+@Database(entities = {Workout.class, Exercise.class, WorkoutExercise.class}, version = 5)
 @TypeConverters({DateHelper.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract WorkoutDao workoutDao();
     public abstract ExerciseDao exerciseDao();
     public abstract WorkoutExerciseDao workoutExerciseDao();
+
+    public static final int CASCADE = 5;
 
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
