@@ -7,6 +7,7 @@ import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+//import android.app.AlertDialog;
 
 import com.example.gymlog.database.AppDatabase;
 import com.example.gymlog.entities.Exercise;
@@ -60,5 +61,9 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(exerciseViewModel.getExercises().getValue());
             System.out.println(workoutViewModel.getWorkouts().getValue());
         });
+
+        //AlertDialog.Builder  workoutBox = new AlertDialog.Builder( this);
+        //workoutBox.setMessage("Nome do treino");
+        //workoutBox.show();
     }
 }
