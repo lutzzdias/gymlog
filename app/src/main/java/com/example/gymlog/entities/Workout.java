@@ -1,20 +1,27 @@
 package com.example.gymlog.entities;
 
-import androidx.room.Embedded;
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Date;
-import java.util.List;
+import java.util.UUID;
 
 @Entity(tableName = "workouts")
 public class Workout {
-    @PrimaryKey(autoGenerate = true)
-    public int id;
+    @PrimaryKey @NonNull
+    public String id;
     public String name;
     public Date date;
 
-    public Workout(String name, Date date){
+    @Ignore
+    public Workout(String name, Date date) {
+        this(UUID.randomUUID().toString(), name, date);
+    }
+
+    public Workout(String id, String name, Date date){
+        this.id = id;
         this.name = name;
         this.date = date;
     }
