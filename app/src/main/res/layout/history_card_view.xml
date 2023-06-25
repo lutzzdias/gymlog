@@ -7,10 +7,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-1dp">
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="32dp"
+        tools:layout_editor_absoluteX="-46dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:background="@drawable/item_list_background"
+        >
 
         <TextView
             android:id="@+id/NomeDoTreino"
@@ -24,10 +27,11 @@
             android:id="@+id/DataDoTreino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="192dp"
             android:text="24/06/2023"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@android:color/black"
             android:textSize="14sp" />
 
-    </LinearLayout>
 
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
