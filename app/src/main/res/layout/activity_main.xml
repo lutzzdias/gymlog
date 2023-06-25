@@ -14,4 +14,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Criar exercício" />
+    <Button
+        android:id="@+id/createWorkoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar treino" />
+    <Button
+        android:id="@+id/createWorkoutExerciseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar exercício de um treino" />
+    <Button
+        android:id="@+id/logDataButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log data" />
 </LinearLayout>
