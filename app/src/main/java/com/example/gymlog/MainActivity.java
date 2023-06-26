@@ -98,26 +98,26 @@ public class MainActivity extends AppCompatActivity {
 
     // Every time the database is cleaned the workoutId and exerciseId must be changed here
     private void createWorkoutExerciseWithHardcodedData() {
-        WorkoutExercise workoutExercise = new WorkoutExercise("414367cf-adbd-4c96-9f44-6d4968e702fd", "1e70a1a1-8d15-4da6-be5d-2b5a5093ea91", 3, 10, 20);
+        WorkoutExercise workoutExercise = new WorkoutExercise("fb427ad1-68ca-438b-b5bc-e96a20892786", "f53070ae-0596-4ba2-aac2-3e8c75578c42", 3, 10, 20);
         workoutExerciseViewModel.insert(workoutExercise);
     }
 
     private void getExerciseById() {
-        exerciseViewModel.getExerciseById("fe21f1c5-7484-4f56-b8f4-4776986caa55");
+        exerciseViewModel.getExerciseById("f53070ae-0596-4ba2-aac2-3e8c75578c42");
         exerciseViewModel.exercise.observe(this, ex -> {
             System.out.println(ex.name);
         });
     }
 
     private void getWorkoutById() {
-        workoutViewModel.getWorkoutById("414367cf-adbd-4c96-9f44-6d4968e702fd");
+        workoutViewModel.getWorkoutById("fb427ad1-68ca-438b-b5bc-e96a20892786");
         workoutViewModel.workout.observe(this, wk -> {
             System.out.println(wk.name);
         });
     }
 
     private void getWorkoutExercises() {
-        workoutExerciseViewModel.getWorkoutExercises("414367cf-adbd-4c96-9f44-6d4968e702fd");
+        workoutExerciseViewModel.getWorkoutExercises("fb427ad1-68ca-438b-b5bc-e96a20892786");
         workoutExerciseViewModel.workoutExercises.observe(this, workoutExercises -> {
             workoutExercises.forEach(wke -> System.out.println(wke.id));
         });
