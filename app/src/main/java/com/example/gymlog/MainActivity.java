@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void goToExerciseListScreen() {
-        Intent intent = new Intent(this, WorkoutList.class);
+        Intent intent = new Intent(this, ExerciseList.class);
         startActivity(intent);
     }
 

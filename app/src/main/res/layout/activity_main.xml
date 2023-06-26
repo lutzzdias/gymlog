@@ -8,7 +8,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to active workout" />
+        android:text="Ir para Listagem de Exercícios" />
     <Button
         android:id="@+id/createExerciseButton"
         android:layout_width="match_parent"
@@ -28,20 +28,20 @@
         android:id="@+id/getExerciseByIdButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="get ex by id" />
+        android:text="Buscar exercício por Id" />
     <Button
         android:id="@+id/getWorkoutByIdButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="get wk by id" />
+        android:text="Buscar treino por Id" />
     <Button
         android:id="@+id/getWorkoutExercisesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="get workoutExercises" />
+        android:text="Buscar exercícios de um treino" />
     <Button
         android:id="@+id/logDataButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log data" />
+        android:text="logar dados" />
 </LinearLayout>
