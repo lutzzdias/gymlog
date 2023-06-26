@@ -27,9 +27,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-<<<<<<< HEAD
-
-=======
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigationHW"
         android:layout_width="match_parent"
@@ -41,5 +38,4 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_bar" />
->>>>>>> 6e21de853a6d66e061d9863505ac7a325f143392
 </androidx.constraintlayout.widget.ConstraintLayout>
