@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+<<<<<<< HEAD
 import java.util.List;
 
 public class ExerciseAdapter extends ArrayAdapter<String> {
@@ -43,5 +44,34 @@ public class ExerciseAdapter extends ArrayAdapter<String> {
     }
     private static class ViewHolder {
         TextView textView;
+=======
+import com.example.gymlog.entities.Exercise;
+import com.example.gymlog.entities.Workout;
+
+import java.util.ArrayList;
+
+public class ExerciseAdapter extends ArrayAdapter<Exercise> {
+    public ExerciseAdapter(Context context, ArrayList<Exercise> exerciseList){
+        super(context, R.layout.custom_workout_item, exerciseList);
+    }
+
+    @NonNull
+    public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
+        View currentItemView = view;
+        if(currentItemView == null){
+            currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.custom_workout_item,
+                    parent, false);
+        }
+
+        Exercise exercisePosition = getItem(position);
+
+        TextView exerciseName = currentItemView.findViewById(R.id.WEName);
+        exerciseName.setText(exercisePosition.getName());
+
+        TextView muscleGroup = currentItemView.findViewById(R.id.WEMuscleGroup);
+        muscleGroup.setText(exercisePosition.getMuscleGroup());
+
+        return currentItemView;
+>>>>>>> 6e21de853a6d66e061d9863505ac7a325f143392
     }
 }

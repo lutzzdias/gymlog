@@ -20,6 +20,26 @@
         android:layout_height="wrap_content"
         android:text="Criar treino" />
     <Button
+        android:id="@+id/createWorkoutExerciseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar exercício de um treino" />
+    <Button
+        android:id="@+id/getExerciseByIdButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get ex by id" />
+    <Button
+        android:id="@+id/getWorkoutByIdButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get wk by id" />
+    <Button
+        android:id="@+id/getWorkoutExercisesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get workoutExercises" />
+    <Button
         android:id="@+id/logDataButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -16,7 +16,7 @@ public interface ExerciseDao {
     LiveData<List<Exercise>> getAll();
 
     @Query("SELECT * FROM exercises WHERE id = :exerciseId")
-    LiveData<Exercise> getById(int exerciseId);
+    LiveData<Exercise> getById(String exerciseId);
 
     @Insert
     void insert(Exercise exercise);

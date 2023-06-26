@@ -15,6 +15,7 @@ public class WorkoutViewModel extends AndroidViewModel {
     final private WorkoutRepository repository;
 
     public final LiveData<List<Workout>> workouts;
+    public LiveData<Workout> workout;
 
     public WorkoutViewModel (Application application) {
         super(application);
@@ -24,5 +25,11 @@ public class WorkoutViewModel extends AndroidViewModel {
 
     public LiveData<List<Workout>> getWorkouts() { return workouts; }
 
+    public LiveData<Workout> getWorkoutById(String id) {
+        workout = repository.getWorkoutById(id);
+        return workout;
+    }
+
     public void insert(Workout workout) { repository.insert(workout); }
+    public void delete(Workout workout) { repository.delete(workout); }
 }

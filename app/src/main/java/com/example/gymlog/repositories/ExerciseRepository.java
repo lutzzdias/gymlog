@@ -9,6 +9,8 @@ import com.example.gymlog.database.AppDatabase;
 import com.example.gymlog.entities.Exercise;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class ExerciseRepository {
 
@@ -25,9 +27,17 @@ public class ExerciseRepository {
     // Observed LiveData will notify the observer when the data has changed.
     public LiveData<List<Exercise>> getExercises() { return exercises; }
 
+    public LiveData<Exercise> getExerciseById(String id) {
+        return exerciseDao.getById(id);
+    }
+
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
     public void insert(Exercise exercise) {
         AppDatabase.databaseWriteExecutor.execute(() -> exerciseDao.insert(exercise));
+    }
+
+    public void delete(Exercise exercise) {
+        AppDatabase.databaseWriteExecutor.execute(() -> exerciseDao.delete(exercise));
     }
 }
