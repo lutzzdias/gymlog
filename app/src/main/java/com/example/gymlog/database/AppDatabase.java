@@ -18,7 +18,7 @@ import com.example.gymlog.helper.DateHelper;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Workout.class, Exercise.class, WorkoutExercise.class}, version = 5)
+@Database(entities = {Workout.class, Exercise.class, WorkoutExercise.class}, version = 6)
 @TypeConverters({DateHelper.class})
 public abstract class AppDatabase extends RoomDatabase {
 

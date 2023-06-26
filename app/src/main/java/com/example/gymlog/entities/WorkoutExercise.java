@@ -18,7 +18,7 @@ import java.util.UUID;
             @ForeignKey(entity = Workout.class, parentColumns = "id", childColumns = "workout_id", onDelete = CASCADE),
             @ForeignKey(entity = Exercise.class, parentColumns = "id", childColumns = "exercise_id", onDelete = CASCADE),
         },
-        indices = {@Index(value = {"workout_id", "exercise_id"})}
+        indices = {@Index(value = {"workout_id"}), @Index(value = {"exercise_id"})}
 )
 public class WorkoutExercise {
     @PrimaryKey @NonNull
