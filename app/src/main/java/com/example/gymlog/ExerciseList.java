@@ -47,6 +47,7 @@ public class ExerciseList extends AppCompatActivity {
                 Intent intent = new Intent(context, CreateExercise.class);
                 startActivity(intent);
             }
+            exer
         });
 
         //NavigationView
